@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+read -rp "Search: " query
+
+selected=$(find "$ORE" -type d -name "*$query*" | fzf)
+dolphin_running=$(pgrep dolphin)
+
+if [[ -z $dolphin_running ]]; then
+    dolphin "$selected" &
+	exit 0
+fi
+dolphin "$selected" &
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+systemctl --user mask plasma-kwin_x11.service
+systemctl daemon-reload
+systemctl --user enable i3-wm.service
