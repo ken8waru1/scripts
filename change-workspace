@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # prevents i3 from wrapping when cycling through workspaces
 case $1 in
