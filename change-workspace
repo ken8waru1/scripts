@@ -2,6 +2,6 @@
 
 # prevents i3 from wrapping when cycling through workspaces
 case $1 in
-    prev) wmctrl -d | head -1 | grep '\*' || i3-msg workspace prev;;
-    next) wmctrl -d | tail -1 | grep '\*' || i3-msg workspace next;;
+    prev) wmctrl -d | sort -k 8 | head -1 | grep '\*' || i3-msg workspace prev;;
+    next) wmctrl -d | sort -k 8 | tail -1 | grep '\*' || i3-msg workspace next;;
 esac
